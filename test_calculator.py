@@ -38,6 +38,15 @@ def test_average():
     assert average([10, 20]) == 15.0
 
 
+def test_average_single_element():
+    assert average([42]) == 42.0
+
+
+def test_average_empty_raises():
+    with pytest.raises(ZeroDivisionError):
+        average([])
+
+
 def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
