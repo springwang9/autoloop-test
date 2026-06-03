@@ -29,7 +29,6 @@ def average(numbers):
 
 
 def factorial(n):
-    # Bug 4: missing base case for n==0, infinite recursion
-    if n == 1:
+    if n <= 1:
         return 1
     return n * factorial(n - 1)
