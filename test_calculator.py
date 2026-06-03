@@ -35,6 +35,7 @@ def test_power():
     assert power(5, 0) == 1       # edge: exponent zero
     assert power(5, 1) == 5       # edge: exponent one
     assert power(0, 10) == 0      # edge: base zero
+    assert power(2, -1) == 0.5     # edge: negative exponent
 
 
 def test_average():
