@@ -14,22 +14,24 @@ def multiply(a, b):
 
 
 def divide(a, b):
-    # Bug 1: no check for division by zero
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
     return a / b
 
 
 def power(base, exp):
-    # Bug 2: uses multiplication instead of exponentiation
-    return base * exp
+    return base ** exp
 
 
 def average(numbers):
-    # Bug 3: off-by-one — divides by len+1 instead of len
-    return sum(numbers) / (len(numbers) + 1)
+    if not numbers:
+        raise ValueError("Cannot average an empty list")
+    return sum(numbers) / len(numbers)
 
 
 def factorial(n):
-    # Bug 4: missing base case for n==0, infinite recursion
-    if n == 1:
+    if n < 0:
+        raise ValueError("Cannot compute factorial of a negative number")
+    if n <= 1:
         return 1
     return n * factorial(n - 1)
