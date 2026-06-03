@@ -29,13 +29,23 @@ def test_divide_by_zero():
 
 
 def test_power():
+    # Regression: Bug #2 — power() used multiplication instead of exponentiation
     assert power(2, 10) == 1024
     assert power(3, 3) == 27
+    assert power(5, 0) == 1       # edge: exponent zero
+    assert power(5, 1) == 5       # edge: exponent one
+    assert power(0, 10) == 0      # edge: base zero
+    assert power(2, -1) == 0.5     # edge: negative exponent
 
 
 def test_average():
     assert average([1, 2, 3, 4, 5]) == 3.0
     assert average([10, 20]) == 15.0
+
+
+def test_average_empty():
+    with pytest.raises(ValueError, match="Cannot average an empty list"):
+        average([])
 
 
 def test_factorial():
