@@ -43,6 +43,11 @@ def test_average():
     assert average([10, 20]) == 15.0
 
 
+def test_average_empty():
+    with pytest.raises(ValueError, match="Cannot average an empty list"):
+        average([])
+
+
 def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
