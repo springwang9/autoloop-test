@@ -19,8 +19,7 @@ def divide(a, b):
 
 
 def power(base, exp):
-    # Bug 2: uses multiplication instead of exponentiation
-    return base * exp
+    return base ** exp
 
 
 def average(numbers):

@@ -29,8 +29,12 @@ def test_divide_by_zero():
 
 
 def test_power():
+    # Regression: Bug #2 — power() used multiplication instead of exponentiation
     assert power(2, 10) == 1024
     assert power(3, 3) == 27
+    assert power(5, 0) == 1       # edge: exponent zero
+    assert power(5, 1) == 5       # edge: exponent one
+    assert power(0, 10) == 0      # edge: base zero
 
 
 def test_average():
