@@ -42,3 +42,13 @@ def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
     assert factorial(1) == 1
+
+
+def test_factorial_negative():
+    with pytest.raises(ValueError, match="Factorial not defined for negative numbers"):
+        factorial(-5)
+
+
+def test_average_empty():
+    with pytest.raises(ValueError, match="Cannot calculate average of empty list"):
+        average([])
