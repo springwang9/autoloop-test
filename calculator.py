@@ -24,8 +24,9 @@ def power(base, exp):
 
 
 def average(numbers):
-    # Bug 3: off-by-one — divides by len+1 instead of len
-    return sum(numbers) / (len(numbers) + 1)
+    if not numbers:
+        raise ValueError("Cannot compute average of an empty list")
+    return sum(numbers) / len(numbers)
 
 
 def factorial(n):
