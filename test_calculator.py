@@ -31,6 +31,8 @@ def test_divide_by_zero():
 def test_power():
     assert power(2, 10) == 1024
     assert power(3, 3) == 27
+    assert power(5, 0) == 1
+    assert power(2, -1) == 0.5
 
 
 def test_average():
