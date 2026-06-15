@@ -24,8 +24,9 @@ def power(base, exp):
 
 
 def average(numbers):
-    # Bug 3: off-by-one — divides by len+1 instead of len
-    return sum(numbers) / (len(numbers) + 1)
+    if len(numbers) == 0:
+        return 0  # or handle this case according to the requirements
+    return sum(numbers) / len(numbers)
 
 
 def factorial(n):
