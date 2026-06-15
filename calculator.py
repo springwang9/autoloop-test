@@ -29,7 +29,8 @@ def average(numbers):
 
 
 def factorial(n):
-    # Bug 4: missing base case for n==0, infinite recursion
-    if n == 1:
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n == 0 or n == 1:
         return 1
     return n * factorial(n - 1)
