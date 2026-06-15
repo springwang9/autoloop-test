@@ -31,14 +31,26 @@ def test_divide_by_zero():
 def test_power():
     assert power(2, 10) == 1024
     assert power(3, 3) == 27
+    assert power(5, 0) == 1
+    assert power(2, -1) == 0.5
+    assert power(5, 0) == 1
+    assert power(2, -1) == 0.5
 
 
 def test_average():
     assert average([1, 2, 3, 4, 5]) == 3.0
     assert average([10, 20]) == 15.0
+    with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):
+        average([])
+    with pytest.raises(ValueError, match="Cannot calculate average of an empty list"):
+        average([])
 
 
 def test_factorial():
     assert factorial(0) == 1
     assert factorial(5) == 120
     assert factorial(1) == 1
+    with pytest.raises(ValueError, match="n must be a non-negative integer"):
+        factorial(-1)
+    with pytest.raises(ValueError, match="n must be a non-negative integer"):
+        factorial(-1)
