@@ -33,6 +33,14 @@ def test_power():
     assert power(3, 3) == 27
 
 
+def test_power_boundary():
+    assert power(0, 5) == 0
+    assert power(5, 0) == 1
+    assert power(-2, 3) == -8
+    assert power(2, -1) == 0.5
+    assert power(1, 100) == 1
+
+
 def test_average():
     assert average([1, 2, 3, 4, 5]) == 3.0
     assert average([10, 20]) == 15.0
